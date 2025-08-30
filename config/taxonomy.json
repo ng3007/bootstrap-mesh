@@ -1,1 +1,114 @@
-# TODO
+{
+  "version": "2025-08-30",
+  "updated_at": "2025-08-30T00:00:00Z",
+  "description": "Bootstrap ontology & ranking config (no owner weighting).",
+  "sections": [
+    { "name": "Executive Summary", "slug": "executive_summary", "description": "High-level TL;DR for the company’s wiki page.", "allowed_doc_types": ["Memos", "Concept Brief", "Internal Meeting Notes"], "min_artifacts": 1 },
+    { "name": "Timeline", "slug": "timeline", "description": "Chronology around IC; milestones and notable updates.", "allowed_doc_types": ["Internal Meeting Notes", "Memos", "Research findings/notes"], "min_artifacts": 1 },
+    { "name": "Investment Thesis (at IC)", "slug": "thesis_ic", "description": "What we believed at IC; drivers, risks, why now.", "allowed_doc_types": ["Memos", "Concept Brief", "Research findings/notes"], "min_artifacts": 1 },
+    { "name": "Research Threads", "slug": "research_threads", "description": "Deep dives and analysis that informed the decision.", "allowed_doc_types": ["Research findings/notes", "Competition Analysis", "Market/ TAM analysis", "Concept Brief", "Expert call notes"], "min_artifacts": 1 },
+    { "name": "Expert Calls", "slug": "expert_calls", "description": "Expert interviews, call notes, transcripts.", "allowed_doc_types": ["Expert call notes"], "min_artifacts": 1 },
+    { "name": "GTM", "slug": "gtm", "description": "Go-to-market strategy, distribution, and commercial motion.", "allowed_doc_types": ["GTM", "Research findings/notes", "Competition Analysis"], "min_artifacts": 1 },
+    { "name": "TAM & Market Research", "slug": "tam_market_research", "description": "Market sizing and research inputs.", "allowed_doc_types": ["Market/ TAM analysis", "Research findings/notes"], "min_artifacts": 1 },
+    { "name": "Product and Tech", "slug": "product_and_tech", "description": "Product, technology, and architecture notes.", "allowed_doc_types": ["Research findings/notes", "Concept Brief", "Internal Meeting Notes"], "min_artifacts": 1 },
+    { "name": "Decision Log", "slug": "decision_log", "description": "Key decisions, pivots, approvals with dates/owners.", "allowed_doc_types": ["Memos", "Internal Meeting Notes"], "min_artifacts": 1 },
+    { "name": "Top Docs", "slug": "top_docs", "description": "Highest-signal artifacts (usually Relevance ≥ 80).", "allowed_doc_types": ["Memos", "Concept Brief", "Research findings/notes", "Market/ TAM analysis", "Competition Analysis", "GTM"], "min_artifacts": 1 },
+    { "name": "Founders and Advisors", "slug": "founders_and_advisors", "description": "Key people, outreach, and advisory network.", "allowed_doc_types": ["Talent", "Advisor tracker/ reachout sheets", "Expert call notes", "Internal Meeting Notes"], "min_artifacts": 0 }
+  ],
+  "doc_types": [
+    { "name": "Memos" },
+    { "name": "Expert call notes" },
+    { "name": "Advisor tracker/ reachout sheets" },
+    { "name": "Market/ TAM analysis" },
+    { "name": "Competition Analysis" },
+    { "name": "GTM" },
+    { "name": "Research findings/notes" },
+    { "name": "Concept Brief" },
+    { "name": "Internal Meeting Notes" },
+    { "name": "Talent" }
+  ],
+  "tags": {
+    "sector": ["Care Delivery", "Biotech", "Pharmacy", "Insurance", "Payments", "Infra/DevTools", "Diagnostics"],
+    "region": ["US", "EMEA", "APAC", "LATAM"]
+  },
+  "normalization": {
+    "section_aliases": {
+      "Executive Summary": ["Executive Overview", "Summary", "TL;DR"],
+      "Investment Thesis (at IC)": ["Thesis", "IC Thesis"],
+      "Research Threads": ["Research", "Analyst Notes", "Deep Dives"],
+      "Expert Calls": ["Interviews", "Calls", "Transcripts"],
+      "GTM": ["Go-to-market", "Go to Market", "Commercial", "Sales & Marketing", "Distribution"],
+      "TAM & Market Research": ["Market Research", "TAM", "Market Sizing", "Market Analysis"],
+      "Product and Tech": ["Product", "Technology", "Tech", "Architecture", "Roadmap"],
+      "Decision Log": ["Decisions", "Go/No-Go", "Approvals"],
+      "Top Docs": ["Highlights", "Key Docs"],
+      "Founders and Advisors": ["Team", "Founders", "Advisors", "People"]
+    },
+    "doc_type_aliases": {
+      "Memos": ["IC Memo", "Investment Committee Memo", "Memo", "IC Deck", "Thesis Memo", "Writeup", "Brief"],
+      "Expert call notes": ["Expert Call", "Call Notes", "Interview", "Transcript"],
+      "Advisor tracker/ reachout sheets": ["Advisor Tracker", "Adviser Tracker", "Outreach", "Reachout", "CRM", "Pipeline", "Contact List"],
+      "Market/ TAM analysis": ["TAM", "Market Size", "Market Sizing", "Market Analysis", "Sizing"],
+      "Competition Analysis": ["Competitive Analysis", "Competitive Landscape", "Competitor Matrix", "Landscape", "Benchmark"],
+      "GTM": ["Go-To-Market", "GTM Plan", "Sales Strategy", "Marketing Plan", "Commercial"],
+      "Research findings/notes": ["Research Note", "Research", "Notes", "Findings", "Analyst Note"],
+      "Concept Brief": ["Concept", "Brief", "One-Pager", "One Pager"],
+      "Internal Meeting Notes": ["Meeting Notes", "Internal Notes", "Sync Notes", "Standup", "Status Update", "Decision Notes"],
+      "Talent": ["Hiring", "Recruiting", "Candidate", "Org", "Headcount"]
+    }
+  },
+  "search": {
+    "date_window_days": 90,
+    "mime_types": [
+      "application/vnd.google-apps.document",
+      "application/vnd.google-apps.spreadsheet",
+      "application/vnd.google-apps.presentation",
+      "application/pdf"
+    ],
+    "folder_priors": [
+      { "regex": "(?i)(\\bIC\\b|investment committee)", "boost": 0.20 },
+      { "regex": "(?i)(research|analysis|notes)", "boost": 0.10 },
+      { "regex": "(?i)(gtm|go[- ]?to[- ]?market)", "boost": 0.05 }
+    ],
+    "forbidden_title_regex": ["(?i)calendar invite", "(?i)invoice", "(?i)job description", "(?i)press release draft"]
+  },
+  "classification": {
+    "rules": [
+      { "title_regex": "(?i)(\\bIC\\b|investment committee|memo|thesis|deck)", "doc_type": "Memos", "priority": 1.0 },
+      { "title_regex": "(?i)(meeting notes|internal|standup|status|sync|decision)", "doc_type": "Internal Meeting Notes", "priority": 0.9 },
+      { "title_regex": "(?i)(expert|interview|call|transcript)", "doc_type": "Expert call notes", "priority": 0.85 },
+      { "title_regex": "(?i)(advisor|adviser|outreach|reachout|tracker|crm|contacts?|pipeline)", "doc_type": "Advisor tracker/ reachout sheets", "priority": 0.6 },
+      { "title_regex": "(?i)(\\btam\\b|market size|market sizing|market analysis|sizing)", "doc_type": "Market/ TAM analysis", "priority": 0.8 },
+      { "title_regex": "(?i)(competit(ive|or)|landscape|matrix|benchmark)", "doc_type": "Competition Analysis", "priority": 0.7 },
+      { "title_regex": "(?i)(go[- ]?to[- ]?market|\\bgtm\\b|sales strategy|marketing plan|commercial)", "doc_type": "GTM", "priority": 0.7 },
+      { "title_regex": "(?i)(research|findings|notes?)", "doc_type": "Research findings/notes", "priority": 0.6 },
+      { "title_regex": "(?i)(concept|brief|one[- ]?pager)", "doc_type": "Concept Brief", "priority": 0.6 },
+      { "title_regex": "(?i)(hiring|recruiting|candidate|org|headcount|role)", "doc_type": "Talent", "priority": 0.4 }
+    ],
+    "llm_backstop": true,
+    "min_confidence": 0.6
+  },
+  "relevance": {
+    "weights": {
+      "title_exact": 0.45,
+      "alias_match": 0.25,
+      "doc_type_priority": 0.20,
+      "date_proximity": 0.10
+    },
+    "doc_type_priority": {
+      "Memos": 1.0,
+      "Concept Brief": 0.85,
+      "Market/ TAM analysis": 0.80,
+      "Competition Analysis": 0.75,
+      "GTM": 0.70,
+      "Research findings/notes": 0.70,
+      "Expert call notes": 0.65,
+      "Internal Meeting Notes": 0.60,
+      "Talent": 0.35,
+      "Advisor tracker/ reachout sheets": 0.35
+    },
+    "threshold_include": 60
+  },
+  "extraction": { "max_chars": 3000, "summary_sentences": 2, "bullets_min": 3, "bullets_max": 7, "require_citation_hint": true }
+}
+
