@@ -1,1 +1,11 @@
-# TODO
+[
+  {
+    "company": "<Steadywell>",
+    "preferred_name": "<Steadywell>",
+    "codename": "<Violet>",
+    "ic_date": "2025-06-01",
+    "aliases": ["<short name>", "<codename>", "<common misspelling 1>", "<common misspelling 2>"],
+    "search_hints": { "folder_ids": ["<optional Drive folder id>"], "keywords": ["IC", "memo", "thesis", "gtm"] }
+  }
+]
+
