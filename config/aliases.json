@@ -6,8 +6,8 @@
     "ic_date": "2023-08-30",
     "aliases": ["<Hospice>", "<Violet Co>", "<steadywell xo>"],
     "search_hints": { "folder_ids": ["1Kbeq-7w5fovh4ubKrchL7jndh9uvf6dq"], "keywords": ["HospiceCo", "Palliative Care", "thesis", "gtm"] }
-  }
   },
+
   {
     "company": "<Kiwi>",
     "preferred_name": "<Kiwi>",
@@ -15,25 +15,25 @@
     "ic_date": "2024-05-29",
     "aliases": ["<Obesity Care>", "<WMC>", "<Weight mgmt>, <Kiwi Health>"],
     "search_hints": { "folder_ids": ["1S-FlzCgBPslVPtaiqQO2g1BCGwWlq1x4"], "keywords": ["WMV", "MGB", "Obesity care", "Weight"] }
-  } 
-},
+  },
+
    {
     "company": "<Corvus>",
     "preferred_name": "<Corvus>",
     "codename": "<Mayo Surgical Triage>",
     "ic_date": "2024-06-11",
-    "aliases": ["<Corvus>", "<Mayo Cobuild>", "<Mayo>, "<corvus_mayo>" ],
+    "aliases": ["<Corvus>", "<Mayo Cobuild>", "<Mayo>", "<corvus_mayo>" ],
     "search_hints": { "folder_ids": ["1cdosEClEoVdlLcH6xMhs0JXXTxOQpiK7"], "keywords": ["Mayo", "Patient Triage", "Memo", "Cobuild"] }
-  }
-},
+  },
+
   {
     "company": "<Dimension>",
     "preferred_name": "<Dimension>",
     "codename": "<Healthcare Geoanalytics>",
     "ic_date": "2024-04-09",
     "aliases": ["<Dimension Geoanalytics>"],
-    "search_hints": { "folder_ids": ["10pjBO3rqoU6-zJWwa3ok18GblJRMQYDX"], "keywords": ["geoanalytics", "memo", "transcripts",] }
-  } 
-},
+    "search_hints": { "folder_ids": ["10pjBO3rqoU6-zJWwa3ok18GblJRMQYDX"], "keywords": ["geoanalytics", "memo", "transcripts"] }
+  },
+
 ]
 
