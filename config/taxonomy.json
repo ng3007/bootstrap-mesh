@@ -63,7 +63,7 @@
     }
   },
   "search": {
-    "date_window_days": 120,
+    "date_window_days": 240,
     "mime_types": [
       "application/vnd.google-apps.document",
       "application/vnd.google-apps.spreadsheet",
@@ -116,7 +116,7 @@
       "MVP": 0.8,
       "Workplan": 0.7,
     },
-    "threshold_include": 60
+    "threshold_include": 30
   },
   "extraction": { "max_chars": 3000, "summary_sentences": 2, "bullets_min": 3, "bullets_max": 7, "require_citation_hint": true }
 }
