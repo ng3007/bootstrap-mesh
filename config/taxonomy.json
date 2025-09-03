@@ -69,7 +69,8 @@
       "application/vnd.google-apps.spreadsheet",
       "application/vnd.google-apps.presentation",
       "application/pdf",
-      "application/excel", 
+      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "application/vnd.ms-excel",
     ],
     "folder_priors": [
   {"regex": "(?i)(\\bgtm\\b|memos?|presentations?|advis(e|o)rs|financial[-_\\s]+models?|market[-_\\s]+(size|sizing)|competitive[-_\\s]+analysis|product|legal|partnerships?|clinical[-_\\s]+models?|bd[-_\\s]*(?:/|and)?[-_\\s]*concept[-_\\s]+testing|project[-_\\s]+management|desk[-_\\s]+(?:and|&)[-_\\s]+secondary[-_\\s]+research|expert[-_\\s]+notes[-_\\s]+and[-_\\s]+internal[-_\\s]+calls)",
@@ -91,6 +92,9 @@
       { "title_regex": "(?i)(hiring|recruiting|candidate|org|headcount|role|talent|founder)", "doc_type": "Talent", "priority": 0.4 },
       { "title_regex": "(?i)(Product document|Technology|Demo|Mock-up)", "doc_type": "MVP", "priority": 0.8 },
       { "title_regex": "(?i)(Workbook|Process|Co-Ideation Process)", "doc_type", "Workplan", "priority": 0.7},
+      { "folder_path_regex": "(?i)(expert[-_\\s]+calls|primary[-_\\s]+research)", "doc_type": "Expert call notes", "priority": 1.0 },
+      { "folder_path_regex": "(?i)(gtm|go[-_\\s]?to[-_\\s]?market|partnerships?)", "doc_type": "GTM", "priority": 0.95 },
+
     ],
     "llm_backstop": true,
     "min_confidence": 0.6
