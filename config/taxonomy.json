@@ -73,7 +73,7 @@
     ],
     "folder_priors": [
   {"regex": "(?i)(\\bgtm\\b|memos?|presentations?|advis(e|o)rs|financial[-_\\s]+models?|market[-_\\s]+(size|sizing)|competitive[-_\\s]+analysis|product|legal|partnerships?|clinical[-_\\s]+models?|bd[-_\\s]*(?:/|and)?[-_\\s]*concept[-_\\s]+testing|project[-_\\s]+management|desk[-_\\s]+(?:and|&)[-_\\s]+secondary[-_\\s]+research|expert[-_\\s]+notes[-_\\s]+and[-_\\s]+internal[-_\\s]+calls)",
-    "boost": 0.12}
+    "boost": 0.20}
 ]
 
   },
