@@ -48,14 +48,14 @@
       "Founders and Advisors": ["Team", "Founders", "Advisors", "People"]
     },
     "doc_type_aliases": {
-      "Memos": ["IC Memo", "Investment Committee Memo", "Memo", "IC Deck", "Thesis Memo", "Writeup", "Brief", "Final Presentation"],
+      "Memos": ["IC Memo", "Investment Committee Memo", "Memo", "IC Deck", "Thesis Memo", "Writeup", "Brief", "Final Presentation", "Check-In"],
       "Expert call notes": ["Expert Call", "Call Notes", "Interview", "Transcript", "Primary Research"],
       "Advisor tracker/ reachout sheets": ["Advisor Tracker", "Adviser List", "Outreach", "Reachout", "CRM", "Pipeline", "Contact List"],
       "Market/ TAM analysis": ["TAM", "Market Size", "Market Sizing", "Market Analysis", "Sizing"],
       "Competition Analysis": ["Competitive Analysis", "Competitive Landscape", "Competitor Matrix", "Landscape", "Benchmark", "Competition Teardown"],
       "GTM": ["Go-To-Market", "GTM Plan", "Sales Strategy", "Marketing Plan", "Commercial", "Co-build", "Partnership"],
       "Research findings/notes": ["Research Note", "Research", "Notes", "Findings", "Analyst Note", "Hypothesis Review", "Milestone review"],
-      "Concept Brief": ["Concept", "Brief", "One-Pager", "Note"],
+      "Concept Brief": ["Concept", "Brief", "One-Pager", "Note", "Business Model"],
       "Internal Meeting Notes": ["Meeting Notes", "Internal Notes", "Sync Notes", "Standup", "Status Update", "Decision Notes"],
       "Talent": ["Hiring", "Recruiting", "Candidate", "Founder", "Board of Directors", "Advisors", "Team"],
       "MVP": ["Product document", "Technology", "Demo", "Mock-up"],
