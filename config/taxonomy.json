@@ -38,7 +38,7 @@
     "section_aliases": {
       "Executive Summary": ["Executive Overview", "Summary", "TL;DR"],
       "Investment Thesis (at IC)": ["Thesis", "IC Thesis"],
-      "Research Threads": ["Research", "Analyst Notes", "Deep Dives", "Findings", "Research Papers"],
+      "Research Threads": ["Research", "Analyst Notes", "Deep Dives", "Findings", "Research Papers", "Quant", "survey"],
       "Expert Calls": ["Interviews", "Calls", "Transcripts"],
       "GTM": ["Go-to-market", "Go to Market", "Commercial", "Sales & Marketing", "Distribution", "Partnership"],
       "TAM & Market Research": ["Market Research", "TAM", "Market Sizing", "Competition", "Competitive Analysis"],
