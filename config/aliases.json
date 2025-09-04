@@ -16,14 +16,13 @@
   "ic_date": "2024-05-29",
   "aliases": ["Kiwi", "Weight Management Co", "WMC", "WeightMgmt", "Weight Management", "Obesity care", "WMV", "MGB"],
   "search_hints": {
-    "folder_ids": [
-      "1S-FlzCgBPslVPtaiqQO2g1BCGwWlq1x4",
-      "1pAoVOeXagXvn-YOyh38CvvKQSEN9bkTA",
-      "1tFKIoGwGs3iFWESt7-xpgDey2F0jpWm2",
-      "1PSsOl-PeM8a_IuT5nbHkwoIQDZ6z96RC",
-      "1UFOAfnYIHTKjZQafn7DJ2o26s5jAJzf6"
-    ],
-    "keywords": ["WMV", "MGB", "Obesity care", "Weight", "WMC", "WeightMgmt", "Weight Management"]
+    "folder_ids": ["1S-FlzCgBPslVPtaiqQO2g1BCGwWlq1x4"],
+      ["1pAoVOeXagXvn-YOyh38CvvKQSEN9bkTA"],
+      ["1tFKIoGwGs3iFWESt7-xpgDey2F0jpWm2"],
+      ["1PSsOl-PeM8a_IuT5nbHkwoIQDZ6z96RC"],
+      ["1UFOAfnYIHTKjZQafn7DJ2o26s5jAJzf6"],
+
+    "keywords": ["WMV", "MGB", "Obesity care", "Weight", "WMC", "WeightMgmt", "Weight Management"] }
   },
 
 
