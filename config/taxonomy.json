@@ -104,9 +104,9 @@
   "mode": "per_section_cap",
   "per_section_cap": 15,
   "sort_within_section": "last_modified_desc",
-  "must_include_doc_types": ["Memos", "Concept Brief"],   // always include these
-  "must_include_max": 25,                                  // safety ceiling
-  "max_total": 120                                         // overall ceiling (optional)
+  "must_include_doc_types": ["Memos", "Concept Brief"],   
+  "must_include_max": 25,                                 
+  "max_total": 120                                         
 },
 
   "section_defaults": {
