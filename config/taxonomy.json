@@ -99,7 +99,32 @@
     "llm_backstop": true,
     "min_confidence": 0.6
   },
-  "relevance": {
+ 
+"selection": {
+  "mode": "per_section_cap",
+  "per_section_cap": 15,
+  "sort_within_section": "last_modified_desc",
+  "must_include_doc_types": ["Memos", "Concept Brief"],   // always include these
+  "must_include_max": 25,                                  // safety ceiling
+  "max_total": 120                                         // overall ceiling (optional)
+},
+
+  "section_defaults": {
+  "Memos": "Investment Thesis",
+  "Concept Brief": "Executive Summary",
+  "Expert call notes": "Expert Calls",
+  "Market/ TAM analysis": "TAM & Market Research",
+  "Competition Analysis": "Research Threads",
+  "GTM": "GTM",
+  "Research findings/notes": "Research Threads",
+  "Internal Meeting Notes": "Timeline",
+  "Advisor tracker/ reachout sheets": "Founders and Advisors",
+  "Talent": "Founders and Advisors",
+  "MVP" : "Product and Tech", 
+},
+
+  
+  "relevance": { "mode": "off"}
     "weights": {
       "title_exact": 0.45,
       "alias_match": 0.25,
