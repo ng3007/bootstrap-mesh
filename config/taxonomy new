@@ -64,18 +64,23 @@
   },
   "search": {
     "date_window_days": 240,
+    "include_shared_drives": true,
+    "page_size": 150,
+    "max_results": 500,
     "mime_types": [
       "application/vnd.google-apps.document",
       "application/vnd.google-apps.spreadsheet",
       "application/vnd.google-apps.presentation",
       "application/pdf",
       "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-      "application/vnd.ms-excel",
+      "application/vnd.ms-excel"
     ],
-    "folder_priors": [
-  {"regex": "(?i)(\\bgtm\\b|memos?|presentations?|advis(e|o)rs|financial[-_\\s]+models?|market[-_\\s]+(size|sizing)|competitive[-_\\s]+analysis|product|legal|partnerships?|clinical[-_\\s]+models?|bd[-_\\s]*(?:/|and)?[-_\\s]*concept[-_\\s]+testing|project[-_\\s]+management|desk[-_\\s]+(?:and|&)[-_\\s]+secondary[-_\\s]+research|expert[-_\\s]+notes[-_\\s]+and[-_\\s]+internal[-_\\s]+calls)",
-    "boost": 0.20}
-]
+    "folder_auto_discovery": {
+    "use_company_root_folder_ids": true,              // <-- read from aliases.search_hints.root_folder_ids
+    "recurse": true,
+    "subfolder_name_regex": "(?i)(^1[_-]?expert.*internal.*calls$|^2[_-]?desk.*secondary.*research$|^3[_-]?project.*management$|^4[_-]?competitive.*analysis$|^5[_-]?market.*siz(ing|e)$|^6[_-]?presentations?$|^7[_-]?memos?$|^8[_-]?advis(e|o)rs$|^9[_-]?financial.*models?$|^10[_-]?(bd|business[-_ ]development).*(/|[-_ ]|\\s)*concept.*testing$|^11[_-]?clinical.*models?$|^12[_-]?partnerships?$|^13[_-]?gtm$|^14[_-]?legal$|^15[_-]?product$)",
+    "fallback_root_name_regex_from_aliases": true     // if no root_folder_ids, search for folders whose names match company/codename/aliases, then apply subfolder regex
+  }
 
   },
   "classification": {
@@ -99,13 +104,34 @@
     "llm_backstop": true,
     "min_confidence": 0.6
   },
-  "relevance": {
-    "weights": {
-      "title_exact": 0.45,
-      "alias_match": 0.25,
-      "doc_type_priority": 0.20,
-      "date_proximity": 0.10
-    },
+ "selection": {
+  "mode": "bucket",
+  "buckets": [
+    { "name": "ic_core",       "doc_types": ["Memos", "Concept Brief"],                                    "cap": 15 },
+    { "name": "expert_calls",  "doc_types": ["Expert call notes"],                                         "cap": 10 },
+    { "name": "market_comp",   "doc_types": ["Market/ TAM analysis", "Competition Analysis", "GTM", "Research findings/notes"], "cap": 15 },
+    { "name": "internal_misc", "doc_types": ["Internal Meeting Notes", "Advisor tracker/ reachout sheets", "Talent"],            "cap": 10 }
+  ],
+  "max_total": 50,
+  "sort_within_bucket": "last_modified_desc"
+},
+"relevance": { "mode": "bucket_only" }
+
+"section_defaults": {
+  "Memos": "Investment Thesis (at IC)",
+  "Concept Brief": "Executive Summary",
+  "Expert call notes": "Expert Calls",
+  "Market/ TAM analysis": "TAM & Market Research",
+  "Competition Analysis": "Research Threads",
+  "GTM": "GTM",
+  "Research findings/notes": "Research Threads",
+  "Internal Meeting Notes": "Timeline",
+  "Advisor tracker/ reachout sheets": "Founders and Advisors",
+  "Talent": "Founders and Advisors"
+}
+},
+
+
     "doc_type_priority": {
       "Memos": 1.0,
       "Concept Brief": 1.0,
