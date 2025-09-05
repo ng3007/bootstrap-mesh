@@ -5,7 +5,10 @@
     "codename": "<Violet>",
     "ic_date": "2023-08-30",
     "aliases": ["<Hospice>", "<Violet Co>", "<steadywell xo>"],
-    "search_hints": { "folder_ids": ["1Kbeq-7w5fovh4ubKrchL7jndh9uvf6dq"], "keywords": ["HospiceCo", "Palliative Care", "thesis", "gtm"] }
+    "search_hints": { 
+    "root_folder_ids": ["1Kbeq-7w5fovh4ubKrchL7jndh9uvf6dq"],
+      "folder_ids": ["1TwsbRZn2ytkcdN6m0tXGpgO_leEKdkYC"], ["1X1p0phMYQCk3jPu03Nd8YyUS1h-SzTfO"], ["10pjBO3rqoU6-zJWwa3ok18GblJRMQYDX"],["1B-YOmZT_dyvjx8w7TCbVVb_UvuVCOX0L"], ["1iMIImn6wJlkY-C8JC7QYiiN0QwPBkyx2"],
+"keywords": ["HospiceCo", "Palliative Care", "thesis", "gtm", "vynyl", "primetime", "quant"] }
   },
 
 
